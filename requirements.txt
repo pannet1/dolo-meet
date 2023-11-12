@@ -1,0 +1,6 @@
+git+https://github.com/pannet1/omspy.git
+git+https://github.com/pannet1/toolkit.git
+git+https://github.com/Kotak-Neo/kotak-neo-api.git#egg=neo_api_client
+pyyaml
+pydantic==1.10.13
+pendulum
