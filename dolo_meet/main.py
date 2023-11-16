@@ -57,7 +57,58 @@ client = login_and_get_token()
 if FUTL.is_file_not_2day(CSVF):
     download_master()
 else:
-    "found master modified today"
+    print("found master modified today")
+
+
+"""
+    based on the user settings of base
+    symbol nifty or banknifty get the ltp
+    find ATM
+"""
+
+
+def atm_strike() -> int:
+    return 15600
+
+
+def ce_pe_symbols(atm_strike) -> list:
+    """
+    you can adapt any data structure
+    you want. i am not restricting you
+    here
+    """
+    lst = [{15600: {"CE": 0, "PE": 0}}, {15650: {"CE": 0, "PE": 0}}]
+    return lst
+
+
+def get_nse_history(lst_ce_pe) -> None:
+    """
+    i have attached a sample program
+    that downloads data from any NSE endpoint.
+    you just suit it your need.
+    refer bhavcopy.py in this repo for the target url
+    we need 10 days of ohlc. also move this function
+    outside this file, so we dont have to deal with nse
+    code here.
+    """
+    return None
+
+
+def generate_signals(lst_ce_pe) -> None:
+    """
+    this is buy only strategy so all
+    our entries are buy. a new buy can come anytime
+    on any symbol we are scanning. check rules.
+    """
+
+    def read_dumped_csv(dct):
+        pass
+
+    for dct in lst_ce_pe:
+        history = read_dumped_csv(dct)
+
+    # from the history read the array starting from the oldest
+    # and extropolate to the current day.
 
 
 """
